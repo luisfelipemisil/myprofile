@@ -11,16 +11,17 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+        
         /* Estilo geral do header */
 header {
     background-color: #f5f5f5;
     padding: 40px 0;
 }
 
-/* Estilo do container */
+/* Container flexível */
 .container {
     display: flex;
-    align-items: stretch; /* Mantém a altura das seções igual */
+    align-items: stretch;
     max-width: 1200px;
     margin: 0 auto;
     border: 2px solid #ddd;
@@ -34,12 +35,12 @@ header {
     overflow: hidden;
 }
 
-/* Imagem alinhada à esquerda e topo */
+/* Imagem responsiva */
 .photo-section img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem cubra o espaço */
-    object-position: top left; /* Alinha ao topo e à esquerda */
+    object-fit: cover;
+    object-position: top left;
 }
 
 /* Seção do texto */
@@ -65,6 +66,45 @@ header {
     font-size: 18px;
     line-height: 1.6;
 }
+
+/* 📱 Responsividade para telas menores */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .photo-section {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .photo-section img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .about-section {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section h1 {
+        font-size: 28px;
+    }
+
+    .about-section h2 {
+        font-size: 20px;
+    }
+
+    .about-section p {
+        font-size: 16px;
+    }
+}
+
+
+
 
         section {
             padding: 20px 0 20px 0;
@@ -92,19 +132,21 @@ header {
 <body>
     <header>
         <div class="container">
-            <!-- Seção da foto -->
-            <div class="photo-section">
-                <img src="images/eu_1.png" alt="Minha Foto">
-            </div>
-    
             <!-- Seção do texto -->
             <div class="about-section">
+                <hr style="height:3px;border-width:0;color:#f6f3e8;background-color:#f6f3e8">
                 <h1>Luis Felipe Miranda da Silva</h1>
                 <h2>Computer Engineer</h2>
                 <p>Sou um Engenheiro da Computação dedicado com ampla experiência em desenvolvimento de software, sistemas embarcados e redes de computadores. Ao longo da minha carreira, desenvolvi habilidades em linguagens de programação como C, C++, Python e Java, além de um profundo conhecimento em arquitetura de computadores e sistemas operacionais. Sou apaixonado por inovação tecnológica e por desenvolver soluções eficientes para problemas complexos.</p>
             </div>
+    
+            <!-- Seção da foto -->
+            <div class="photo-section">
+                <img src="images/eu_1.png" alt="Minha Foto">
+            </div>
         </div>
     </header>
+    
     
     <section class="projects" id="projects">
         <div class="container">
