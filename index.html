@@ -15,7 +15,18 @@
         /* Estilo geral do header */
 header {
     background-color: #f5f5f5;
-    padding: 40px 0;
+}
+
+header p {
+    color: #f4f4f4;
+}
+
+p{
+    color: #d96b39;
+}
+
+li{
+    color: #d96b39;
 }
 
 /* Container flexível */
@@ -24,8 +35,20 @@ header {
     align-items: stretch;
     max-width: 1200px;
     margin: 0 auto;
-    border: 2px solid #ddd;
+    background-color: #f6f3e8;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+
 }
+
+.section-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0px auto;
+            gap: 20px;
+            background-color: #f6f3e8;
+            box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.2), 10px 0 10px -5px rgba(0, 0, 0, 0.2);
+        }
 
 /* Seção da foto */
 .photo-section {
@@ -54,6 +77,7 @@ header {
 .about-section h1 {
     font-size: 36px;
     font-family: 'Georgia', serif;
+    color: #d96b39;
 }
 
 .about-section h2 {
@@ -103,23 +127,7 @@ header {
     }
 }
 
-
-
-
-        section {
-            padding: 20px 0 20px 0;
-        }
-        .bio, .projects, .objectives {
-            background: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .projects img {
-            width: 100%;
-            height: auto;
-        }
+        
         footer {
             background: #333;
             color: #fff;
@@ -127,6 +135,148 @@ header {
             padding: 20px 0;
             margin-top: 20px;
         }
+
+        footer {
+background-color: #333;
+color: #fff;
+padding: 20px;
+text-align: center;
+font-size: 1rem;
+}
+
+footer a {
+color: #fff;
+text-decoration: none;
+margin: 0 10px;
+transition: color 0.3s ease;
+}
+
+footer a:hover {
+color: #ce4f02; /* Altere para a cor desejada ao passar o mouse */
+}
+
+/* Ícones ao lado do texto */
+footer i {
+margin-right: 8px;
+font-size: 1.2rem;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+footer {
+font-size: 0.9rem;
+}
+
+footer i {
+font-size: 1rem; /* Ajuste no tamanho dos ícones */
+}
+}
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 20px;
+            text-decoration: underline;
+            color: #d96b39;
+        }
+
+       
+        
+        .left-section {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .right-section {
+            flex: 1;
+        }
+
+        .advantages {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .advantages div {
+            flex: 1;
+        }
+
+        .advantages img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .projects img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .create-together ul {
+            columns: 2;
+            list-style: none;
+            padding: 0;
+        }
+
+        .create-together ul li {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .titulo {
+    text-align: center;
+    color: #d96b39;
+}
+
+.texto {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 1rem;
+    padding: 40px 100px;
+    color: #d96b39;
+}
+
+.create-together {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.bullet-points {
+    list-style-type: none; /* Remove bullets padrão */
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.bullet-points li {
+    position: relative;
+    padding-left: 1.5rem; /* Espaço para o ícone personalizado */
+}
+
+.bullet-points li::before {
+    content: "•"; /* Ícone personalizado */
+    position: absolute;
+    left: 0;
+    color: #d96b39; /* Cor do bullet */
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -146,32 +296,85 @@ header {
             </div>
         </div>
     </header>
-    
-    
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2>Projetos</h2>
-            <div class="project">
-                <h3>Desenvolvimento de Sistema de Automação Residencial</h3>
-                <p>Este projeto envolveu a criação de um sistema de automação residencial utilizando microcontroladores e sensores diversos. O objetivo era proporcionar uma interface intuitiva para o controle de iluminação, temperatura e segurança da residência. Utilizei tecnologias como Arduino, sensores de presença e temperatura, e desenvolvi a interface com Python.</p>
-            </div>
-            <div class="project">
-                <h3>Otimização de Redes de Computadores</h3>
-                <p>Trabalhei na análise e otimização de redes de computadores para melhorar a eficiência e a segurança. Através da implementação de novos protocolos e configuração avançada de roteadores e switches, consegui reduzir a latência e aumentar a largura de banda disponível para os usuários.</p>
-            </div>
-            <!-- Adicione mais projetos conforme necessário -->
-        </div>
-    </section>
 
-    <section class="objectives" id="objectives">
-        <div class="container">
-            <h2>Objetivos</h2>
-            <p>Meus objetivos profissionais incluem continuar a me desenvolver como Engenheiro da Computação, com foco em áreas como inteligência artificial e aprendizado de máquina. Busco oportunidades para liderar projetos inovadores e contribuir para o desenvolvimento de tecnologias que tenham um impacto positivo na sociedade. Estou comprometido com a aprendizagem contínua e com a adaptação às rápidas mudanças tecnológicas da minha área.</p>
+    <hr style="height:3px;border-width:0;color:#f6f3e8;background-color:#d96b39;margin-top: 0px;margin-bottom: 0px;max-width: 1200px;">
+    <section class="section-container">
+        <div class="left-section">
+            <h1>Vantagens de me contratar</h1>
+            <div class="advantages">
+                <div>
+                    <img src="images/aviao.jpg" alt="Comunidade engajada">
+                    <p>Comunidade engajada</p>
+                </div>
+                <div>
+                    <img src="images/aviao.jpg" alt="Público específico">
+                    <p>Público específico</p>
+                </div>
+                <div>
+                    <img src="images/aviao.jpg" alt="Impulsionamento da marca">
+                    <p>Impulsionamento da marca</p>
+                </div>
+            </div>
+
+            <h1>O que podemos criar juntos</h1>
+            <div class="create-together">
+                <ul class="bullet-points">
+                    <li>Unboxing</li>
+                    <li>Skincare</li>
+                    <li>Provador</li>
+                    <li>Lifestyle</li>
+                    <li>Bastidores</li>
+                    <li>Viagens</li>
+                    <li>Marketing</li>
+                    <li>Review de produtos</li>
+                    <li>Decoração</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="right-section">
+            <h1>Projetos anteriores</h1>
+            <div class="projects">
+                <a href="https://geralista.com/" target="_blank">
+                    <img src="images/geraLista.png" alt="Projeto 1">
+                </a>
+                <a href="https://github.com/CESARBR/knot-thing-lorawan/commits/master/" target="_blank">
+                    <img src="images/lora_knotpng.png" alt="Projeto 2">
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=CVcckmj_pHY" target="_blank">
+                    <img src="images/curupirapng.png" alt="Projeto 3">
+                </a>
+
+                <a href="https://github.com/luisfelipemisil/chirpstack-docker" target="_blank">
+                    <img src="images/dockerpng.png" alt="Projeto 3">
+                </a>
+                
+            </div>
         </div>
     </section>
+    
+
+    <section class="section-container">
+        <div class="objetivos">
+            <h2 class="titulo">Objetivos</h2>
+            <p class="texto">
+                Meus objetivos profissionais incluem continuar a me desenvolver como Engenheiro da Computação, com foco em áreas como <strong>inteligência artificial</strong> e <strong>aprendizado de máquina</strong>. Busco oportunidades para liderar projetos inovadores e contribuir para o desenvolvimento de tecnologias que tenham um impacto positivo na sociedade. Estou comprometido com a <strong>aprendizagem contínua</strong> e com a adaptação às rápidas mudanças tecnológicas da minha área.
+            </p>
+        </div>
+    </section>
+    
 
     <footer>
-        <p>Entre em contato: seuemail@exemplo.com | Telefone: (99) 99999-9999</p>
+        <p>Contact us at: <a href="mailto:contato@luisfelipemisil.com"><i class="fas fa-envelope"></i> contato@luisfelipemisil.com</a></p>
+        <p>Follow us on social media: 
+            <a href="https://www.instagram.com/geralistas/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://twitter.com/luisfelipemisil" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="https://www.youtube.com/channel/UCGEBp6-etIf6QMfdchJ8pRg" target="_blank"><i class="fab fa-youtube"></i> Youtube</a>
+        </p>
+        <p>Created by: <a href="https://luisfelipemisil.com" target="_blank"><i class="fas fa-user"></i> Luis Felipe Miranda da Silva</a></p>
+        <a href="privacy-policy.html">Privacy Policy</a>
     </footer>
 </body>
 </html>
