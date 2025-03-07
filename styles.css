@@ -175,127 +175,171 @@ font-size: 1rem; /* Ajuste no tamanho dos ícones */
 
        
         
-        .left-section {
-            flex: 1;
-            padding: 40px;
+        .section-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
         }
-
-        .right-section {
-            flex: 1;
+        
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            width: 100%;
         }
-
+        
+        .left-section, .right-section {
+            padding: 20px;
+        }
+        
         .advantages {
             display: flex;
             justify-content: space-between;
             text-align: center;
-            padding: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
-
+        
         .advantages div {
             flex: 1;
+            min-width: 120px;
         }
-
+        
         .advantages img {
             width: 60px;
             height: 60px;
             margin-bottom: 10px;
         }
-
+        
         .projects {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
             gap: 20px;
-            padding: 40px;
         }
-
+        
         .projects img {
             width: 100%;
             border-radius: 8px;
         }
-
-        .create-together ul {
-            columns: 2;
-            list-style: none;
-            padding: 0;
+        
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers content horizontally */
+            text-align: center; /* Centers text inside */
         }
-
+        
+        .left-section h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            text-align: center;
+            /* border-bottom: 2px solid #333; */
+            padding-bottom: 5px;
+            width: 80%;
+        }
+        
+        .create-together {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .create-together ul {
+            /* list-style: none; */
+            /* padding: 0; */
+            text-align: center;
+            columns: 2;
+            column-gap: 20px;
+        }
+        
         .create-together ul li {
-            margin: 5px 0;
+            /* margin: 8px 0; */
             font-size: 18px;
         }
+    
 
-        .titulo {
-    text-align: center;
-    color: #d96b39;
+        
+        
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+        
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        
+            .create-together ul {
+                columns: 1;
+            }
+        
+            .advantages {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .advantages div {
+                max-width: 200px;
+            }
+        }
+        
+.section-container-objetivos {
+    padding: 40px 20px; /* Adds padding around the section */
+    background-color: #f9f9f9; /* Light background color */
+    border-top: 3px solid #d96b39; /* Orange border at the top */
+    border-bottom: 3px solid #d96b39; /* Orange border at the bottom */
+    margin: 40px 0; /* Adds margin above and below the section */
 }
 
-.texto {
-    text-align: justify;
-    line-height: 1.6;
-    font-size: 1rem;
-    padding: 40px 100px;
-    color: #d96b39;
+/* Container for the objectives section */
+.objetivos {
+    max-width: 800px; /* Limits the width for better readability */
+    margin: 0 auto; /* Centers the container horizontally */
+    text-align: center; /* Centers the text */
 }
 
-.create-together {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+/* Styling for the title */
+.titulo, h1 {
+    font-size: 2.5rem; /* Large font size for the title */
+    color: #333; /* Dark gray color */
+    margin-bottom: 20px; /* Adds space below the title */
+    font-weight: bold; /* Makes the title bold */
+    text-transform: uppercase; /* Converts text to uppercase */
+    letter-spacing: 1.5px; /* Adds spacing between letters */
 }
 
-.create-together {
-    font-family: Arial, sans-serif;
+/* Styling for the text */
+.texto, li, p {
+    font-size: 1.1rem; /* Comfortable font size for reading */
+    color: #555; /* Medium gray color */
+    line-height: 1.8; /* Increases line height for better readability */
 }
 
-.bullet-points-redes {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Styling for <strong> tags inside the text */
+.texto strong, strong {
+    color: #d96b39; /* Orange color for emphasis */
+    font-weight: 600; /* Slightly bolder */
 }
 
-.bullet-points-redes li {
-    margin: 10px 0;
+a {
+    color: #3138c2; /* Orange color for emphasis */
+    font-weight: 600; /* Slightly bolder */
 }
 
-.bullet-points-redes a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: color 0.3s ease;
-}
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 2rem; /* Slightly smaller font size for mobile */
+    }
 
-.bullet-points-redes a:hover {
-    color: #d96b39;
-}
+    .texto {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
 
-.bullet-points-redes i {
-    font-size: 1.5rem;
-}
-
-.bullet-points {
-    list-style-type: none; /* Remove bullets padrão */
-    padding: 0;
-    margin: 0;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #555;
-}
-
-.bullet-points li {
-    position: relative;
-    padding-left: 1.5rem; /* Espaço para o ícone personalizado */
-}
-
-.bullet-points li::before {
-    content: "•"; /* Ícone personalizado */
-    position: absolute;
-    left: 0;
-    color: #d96b39; /* Cor do bullet */
-    font-size: 1.5rem;
-    line-height: 1;
+    .section-container {
+        padding: 30px 15px; /* Reduces padding for smaller screens */
+    }
 }
